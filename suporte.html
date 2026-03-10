@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suporte — Juntin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    .support-page { padding-top: 100px; padding-bottom: 80px; }
+    .support-wrap { max-width: 800px; margin: 0 auto; }
+    .support-header { margin-bottom: 48px; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 600; color: var(--primary);
+      text-decoration: none; margin-bottom: 32px;
+      padding: 8px 14px; background: var(--card);
+      border: 1px solid var(--border); border-radius: 10px;
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+    .back-link:hover { background: var(--bg); box-shadow: var(--shadow); }
+
+    /* Contact cards */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-card);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      text-decoration: none;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .contact-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .contact-icon {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+    .contact-title {
+      font-size: 16px; font-weight: 700; letter-spacing: -0.2px;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .contact-desc {
+      font-size: 14px; line-height: 1.55; color: var(--text-secondary);
+    }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 8px; }
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: background var(--transition);
+    }
+    .faq-question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      text-align: left;
+      gap: 12px;
+      transition: color var(--transition);
+    }
+    .faq-question:hover { color: var(--primary); }
+    .faq-chevron {
+      font-size: 18px;
+      color: var(--text-secondary);
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0 20px;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding: 0 20px 18px;
+    }
+    .faq-answer p {
+      font-size: 14px; line-height: 1.65; color: var(--text-secondary);
+    }
+    .faq-divider {
+      height: 1px; background: var(--border); margin: 0 20px;
+    }
+
+    @media (max-width: 600px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="/index.html" class="nav-logo">
+      <span class="nav-logo-text">Junt<span class="logo-in">in</span></span>
+    </a>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
+        <span id="theme-icon">🌙</span>
+      </button>
+      <a href="/index.html#download" class="btn btn-primary" style="height:40px;padding:0 18px;font-size:14px;border-radius:12px;">
+        Baixar Grátis
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="support-page">
+  <div class="container">
+    <div class="support-wrap">
+
+      <a href="/index.html" class="back-link">← Voltar ao início</a>
+
+      <div class="support-header">
+        <span class="section-tag">Ajuda</span>
+        <h1 class="section-title">Como podemos ajudar?</h1>
+        <p class="section-subtitle" style="margin-top:10px">Encontre respostas rápidas ou entre em contato com nossa equipe.</p>
+      </div>
+
+      <!-- Contact options -->
+      <div class="contact-grid">
+
+        <a href="mailto:contato@juntin.app" class="contact-card">
+          <div class="contact-icon" style="background:rgba(108,134,255,0.12)">✉️</div>
+          <div class="contact-title">E-mail</div>
+          <p class="contact-desc">Envie sua dúvida ou relato de problema para <strong>contato@juntin.app</strong>. Respondemos em até 2 dias úteis.</p>
+        </a>
+
+        <a href="mailto:privacidade@juntin.app" class="contact-card">
+          <div class="contact-icon" style="background:rgba(110,211,160,0.15)">🔒</div>
+          <div class="contact-title">Privacidade & Dados</div>
+          <p class="contact-desc">Para solicitações sobre seus dados pessoais (LGPD), envie para <strong>privacidade@juntin.app</strong>.</p>
+        </a>
+
+        <a href="/privacidade.html" class="contact-card">
+          <div class="contact-icon" style="background:rgba(255,201,107,0.15)">📄</div>
+          <div class="contact-title">Política de Privacidade</div>
+          <p class="contact-desc">Saiba como seus dados são coletados, usados e protegidos pelo Juntin.</p>
+        </a>
+
+        <a href="/termos.html" class="contact-card">
+          <div class="contact-icon" style="background:rgba(245,166,193,0.15)">📋</div>
+          <div class="contact-title">Termos de Uso</div>
+          <p class="contact-desc">Leia as condições de uso do aplicativo Juntin antes de começar.</p>
+        </a>
+
+      </div>
+
+      <!-- FAQ -->
+      <div>
+        <span class="section-tag">Perguntas frequentes</span>
+        <h2 class="section-title" style="margin-bottom:28px">FAQ</h2>
+
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              O Juntin é gratuito?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-divider"></div>
+            <div class="faq-answer">
+              <p>Sim! O Juntin é gratuito para download e uso. Funcionalidades básicas como registrar transações, ver relatórios e convidar seu parceiro são totalmente gratuitas.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              Como convido meu parceiro(a)?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-divider"></div>
+            <div class="faq-answer">
+              <p>Após criar sua conta, vá até a tela de Perfil e toque em "Convidar parceiro". Você pode compartilhar o link de convite pelo WhatsApp, e-mail ou qualquer outro app. Seu parceiro instala o Juntin e cria a conta pelo link — assim vocês ficam no mesmo workspace automaticamente.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              Meus dados financeiros são seguros?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-divider"></div>
+            <div class="faq-answer">
+              <p>Sim. Todas as comunicações entre o app e nossos servidores usam criptografia TLS. Seus dados são armazenados de forma segura e nunca são vendidos ou compartilhados com terceiros. Veja mais em nossa <a href="/privacidade.html" style="color:var(--primary);font-weight:600">Política de Privacidade</a>.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              O app funciona sem internet?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-divider"></div>
+            <div class="faq-answer">
+              <p>O Juntin requer conexão com a internet para sincronizar os dados entre você e seu parceiro, carregar relatórios e registrar transações. Não há modo offline no momento.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              Como excluo minha conta?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-divider"></div>
+            <div class="faq-answer">
+              <p>Acesse Perfil → Configurações → Excluir conta. Todos os seus dados pessoais serão removidos permanentemente em até 30 dias. Se precisar de ajuda, envie e-mail para <strong>contato@juntin.app</strong>.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              Posso usar o Juntin sozinho (sem parceiro)?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-divider"></div>
+            <div class="faq-answer">
+              <p>Sim! Você pode usar o Juntin individualmente para controlar suas finanças pessoais. O workspace compartilhado é opcional — convide seu parceiro quando quiser.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              As notificações são obrigatórias?
+              <span class="faq-chevron">⌄</span>
+            </button>
+            <div class="faq-divider"></div>
+            <div class="faq-answer">
+              <p>Não. As notificações push são opcionais. Você pode ativá-las ou desativá-las a qualquer momento em Perfil → Preferências → Notificações. Também é possível escolher quais tipos de alertas receber.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-copy">© 2025 Juntin. Feito com ❤️ para casais que planejam juntos.</div>
+      <ul class="footer-links">
+        <li><a href="/privacidade.html">Política de Privacidade</a></li>
+        <li><a href="/termos.html">Termos de Uso</a></li>
+        <li><a href="/suporte.html">Suporte</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="/src/suporte.js"></script>
+</body>
+</html>

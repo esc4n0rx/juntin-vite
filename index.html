@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juntin — Finanças em casal, sem complicação</title>
+  <meta name="description" content="Juntin é o app de finanças compartilhado para casais. Controle receitas, despesas e economias juntos, em tempo real." />
+  <meta name="theme-color" content="#1F2A44" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Juntin — Finanças em casal" />
+  <meta property="og:description" content="Controle suas finanças juntos. Receitas, despesas, relatórios e muito mais — em tempo real." />
+  <meta property="og:type" content="website" />
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ── NAV ────────────────────────────────────────────────────────────────── -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-text">Junt<span class="logo-in">in</span></span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#features">Funcionalidades</a></li>
+      <li><a href="#how">Como funciona</a></li>
+      <li><a href="#download">Download</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
+        <span id="theme-icon">🌙</span>
+      </button>
+      <a href="#download" class="btn btn-primary" style="height:40px;padding:0 18px;font-size:14px;border-radius:12px;">
+        Baixar Grátis
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ───────────────────────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-inner">
+
+      <!-- Left: copy -->
+      <div>
+        <div class="hero-badge fade-up">
+          <span class="hero-badge-dot"></span>
+          Disponível no Google Play
+        </div>
+
+        <h1 class="hero-title fade-up delay-1">
+          Finanças em casal,<br>
+          <em>sem complicação.</em>
+        </h1>
+
+        <p class="hero-subtitle fade-up delay-2">
+          Juntin é o app de finanças compartilhado para casais.
+          Controle receitas, despesas e economias <strong>juntos</strong>,
+          em tempo real — de qualquer lugar.
+        </p>
+
+        <div class="hero-actions fade-up delay-3">
+          <a href="#download" class="btn btn-primary btn-lg">
+            <!-- Google Play icon -->
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+              <path d="M3.18 23.76c.28.15.6.17.9.06l11.65-6.73-2.52-2.52L3.18 23.76zm16.49-10.54c.44-.25.71-.72.71-1.22s-.27-.97-.71-1.22L17.1 9.42 14.37 12l2.73 2.73 2.57-1.51zM3.01.24C2.7.38 2.5.7 2.5 1.05v21.9c0 .35.2.67.51.81l11.5-11.51L3.01.24zm10.71 10.04L3.9.62l10.29 5.94-2.48 3.72z"/>
+            </svg>
+            Baixar no Google Play
+          </a>
+          <a href="#features" class="btn btn-secondary btn-lg">
+            Ver funcionalidades
+          </a>
+        </div>
+
+        <div class="hero-stats fade-up delay-4">
+          <div>
+            <div class="hero-stat-value"><span class="counter" data-target="100" data-suffix="%">0%</span></div>
+            <div class="hero-stat-label">Gratuito</div>
+          </div>
+          <div style="width:1px;height:36px;background:var(--border)"></div>
+          <div>
+            <div class="hero-stat-value">2</div>
+            <div class="hero-stat-label">Pessoas por workspace</div>
+          </div>
+          <div style="width:1px;height:36px;background:var(--border)"></div>
+          <div>
+            <div class="hero-stat-value">∞</div>
+            <div class="hero-stat-label">Contas e categorias</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: screenshot real -->
+      <div class="hero-visual fade-up delay-2">
+        <div class="hero-phone-wrap">
+          <div class="phone-glow"></div>
+          <img src="/home.jfif" alt="Tela inicial do Juntin" class="hero-screenshot" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURES ───────────────────────────────────────────────────────────── -->
+<section id="features">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Funcionalidades</span>
+      <h2 class="section-title">Tudo que vocês precisam, num só lugar</h2>
+      <p class="section-subtitle">Do saldo em tempo real aos relatórios mensais — o Juntin cobre todas as etapas das finanças a dois.</p>
+    </div>
+
+    <div class="features-grid">
+
+      <div class="feature-card reveal">
+        <div class="feature-icon-wrap" style="background:rgba(110,211,160,0.15)">💰</div>
+        <div class="feature-title">Saldo em tempo real</div>
+        <p class="feature-desc">Visualize o saldo consolidado do casal em uma única tela. Receitas, gastos e economia do mês, sempre atualizados.</p>
+      </div>
+
+      <div class="feature-card reveal" style="transition-delay:0.07s">
+        <div class="feature-icon-wrap" style="background:rgba(108,134,255,0.12)">📊</div>
+        <div class="feature-title">Relatórios detalhados</div>
+        <p class="feature-desc">Gráficos de barras, breakdown por categoria e por conta. Compare meses, acompanhe tendências e descubra onde vocês gastam mais.</p>
+      </div>
+
+      <div class="feature-card reveal" style="transition-delay:0.14s">
+        <div class="feature-icon-wrap" style="background:rgba(255,201,107,0.15)">🔄</div>
+        <div class="feature-title">Recorrentes automáticos</div>
+        <p class="feature-desc">Cadastre assinaturas, aluguel, parcelas e outros gastos fixos. O app lembra de tudo para vocês automaticamente.</p>
+      </div>
+
+      <div class="feature-card reveal" style="transition-delay:0.21s">
+        <div class="feature-icon-wrap" style="background:rgba(245,166,193,0.15)">👫</div>
+        <div class="feature-title">Modo casal</div>
+        <p class="feature-desc">Crie um workspace compartilhado e convide seu parceiro via link. Tudo sincronizado entre vocês dois em tempo real.</p>
+      </div>
+
+      <div class="feature-card reveal" style="transition-delay:0.28s">
+        <div class="feature-icon-wrap" style="background:rgba(110,211,160,0.15)">🏦</div>
+        <div class="feature-title">Múltiplas contas</div>
+        <p class="feature-desc">Adicione quantas contas precisar — Nubank, Itaú, conta conjunta, carteira. Cada transação vai para a conta certa.</p>
+      </div>
+
+      <div class="feature-card reveal" style="transition-delay:0.35s">
+        <div class="feature-icon-wrap" style="background:rgba(108,134,255,0.12)">🔔</div>
+        <div class="feature-title">Notificações inteligentes</div>
+        <p class="feature-desc">Receba alertas quando seu parceiro registrar uma transação. Controle quais notificações receber nas preferências.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ────────────────────────────────────────────────────────── -->
+<section id="how">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Como funciona</span>
+      <h2 class="section-title">Começar é simples</h2>
+      <p class="section-subtitle">Em menos de 2 minutos vocês já estão organizando as finanças juntos.</p>
+    </div>
+
+    <div class="steps-grid">
+
+      <div class="step reveal">
+        <div class="step-number">1</div>
+        <div class="step-title">Crie sua conta</div>
+        <p class="step-desc">Cadastre-se com e-mail ou Google. É gratuito e não precisa de cartão de crédito.</p>
+      </div>
+
+      <div class="step reveal" style="transition-delay:0.15s">
+        <div class="step-number">2</div>
+        <div class="step-title">Convide seu parceiro</div>
+        <p class="step-desc">Envie um link de convite para seu parceiro(a). Ao aceitar, vocês ficam no mesmo workspace compartilhado.</p>
+      </div>
+
+      <div class="step reveal" style="transition-delay:0.30s">
+        <div class="step-number">3</div>
+        <div class="step-title">Registre e acompanhe</div>
+        <p class="step-desc">Adicione receitas, despesas e transferências. Veja os relatórios e economize mais juntos.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── PREVIEW ─────────────────────────────────────────────────────────────── -->
+<section id="preview">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Telas do App</span>
+      <h2 class="section-title">Interface limpa e intuitiva</h2>
+      <p class="section-subtitle">Design moderno adaptado para modo claro e escuro, com suporte completo a Android.</p>
+    </div>
+
+    <div class="screens-scroll reveal">
+
+      <div class="screen-item">
+        <div class="screen-phone">
+          <img src="/home.jfif" alt="Tela Início" class="screen-img" loading="lazy" />
+        </div>
+        <div class="screen-label">Início</div>
+      </div>
+
+      <div class="screen-item">
+        <div class="screen-phone">
+          <img src="/reports.jfif" alt="Tela Relatórios" class="screen-img" loading="lazy" />
+        </div>
+        <div class="screen-label">Relatórios</div>
+      </div>
+
+      <div class="screen-item">
+        <div class="screen-phone">
+          <img src="/goals.jfif" alt="Tela Metas" class="screen-img" loading="lazy" />
+        </div>
+        <div class="screen-label">Metas</div>
+      </div>
+
+      <div class="screen-item">
+        <div class="screen-phone">
+          <img src="/prevision.jfif" alt="Tela Previsão" class="screen-img" loading="lazy" />
+        </div>
+        <div class="screen-label">Previsão</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── DOWNLOAD ────────────────────────────────────────────────────────────── -->
+<section id="download">
+  <div class="container">
+    <div class="download-card reveal">
+      <h2 class="download-title">Prontos para começar juntos?</h2>
+      <p class="download-subtitle">
+        Baixe o Juntin gratuitamente e comecem a controlar as finanças do casal ainda hoje. Disponível para Android.
+      </p>
+
+      <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:28px">
+        <a href="#" class="store-badge">
+          <!-- Google Play SVG -->
+          <svg viewBox="0 0 24 24" fill="white" width="28" height="28">
+            <path d="M3.18 23.76c.28.15.6.17.9.06l11.65-6.73-2.52-2.52L3.18 23.76zm16.49-10.54c.44-.25.71-.72.71-1.22s-.27-.97-.71-1.22L17.1 9.42 14.37 12l2.73 2.73 2.57-1.51zM3.01.24C2.7.38 2.5.7 2.5 1.05v21.9c0 .35.2.67.51.81l11.5-11.51L3.01.24zm10.71 10.04L3.9.62l10.29 5.94-2.48 3.72z"/>
+          </svg>
+          <div class="store-badge-text">
+            <div class="store-badge-sub">Disponível no</div>
+            <div class="store-badge-main">Google Play</div>
+          </div>
+        </a>
+      </div>
+
+      <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
+        <div class="notice notice-success">
+          ✅ Gratuito para baixar
+        </div>
+        <div class="notice notice-warning">
+          🔒 Seus dados são privados e seguros
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-copy">
+        © 2026 Juntin. Feito com ❤️ para casais que planejam juntos.
+      </div>
+      <ul class="footer-links">
+        <li><a href="/privacidade.html">Política de Privacidade</a></li>
+        <li><a href="/termos.html">Termos de Uso</a></li>
+        <li><a href="/suporte.html">Suporte</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
