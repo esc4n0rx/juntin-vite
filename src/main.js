@@ -1,35 +1,34 @@
 import './style.css'
 
-// ── Theme toggle ──────────────────────────────────────────────────────────────
-const root = document.documentElement
-const themeBtn = document.getElementById('theme-toggle')
-const themeIcon = document.getElementById('theme-icon')
-
-function getSystemTheme() {
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+// ── Nav scroll shadow ─────────────────────────────────────────────────────────
+const nav = document.getElementById('nav')
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 8)
+  }, { passive: true })
 }
 
-function applyTheme(theme) {
-  root.setAttribute('data-theme', theme)
-  themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙'
-  localStorage.setItem('juntin-theme', theme)
+// ── Hamburger menu ────────────────────────────────────────────────────────────
+const hamburger = document.getElementById('hamburger')
+const mobileNav = document.getElementById('mobile-nav')
+
+if (hamburger && mobileNav) {
+  hamburger.addEventListener('click', () => {
+    mobileNav.classList.toggle('open')
+  })
+
+  // Close on link click
+  mobileNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => mobileNav.classList.remove('open'))
+  })
+
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target) && !mobileNav.contains(e.target)) {
+      mobileNav.classList.remove('open')
+    }
+  })
 }
-
-// Init theme
-const saved = localStorage.getItem('juntin-theme')
-applyTheme(saved || getSystemTheme())
-
-themeBtn.addEventListener('click', () => {
-  const current = root.getAttribute('data-theme')
-  applyTheme(current === 'dark' ? 'light' : 'dark')
-})
-
-// Listen for system theme changes
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-  if (!localStorage.getItem('juntin-theme')) {
-    applyTheme(e.matches ? 'dark' : 'light')
-  }
-})
 
 // ── Scroll reveal ─────────────────────────────────────────────────────────────
 const observer = new IntersectionObserver(
@@ -41,20 +40,10 @@ const observer = new IntersectionObserver(
       }
     })
   },
-  { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+  { threshold: 0.10, rootMargin: '0px 0px -32px 0px' }
 )
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el))
-
-// ── Nav scroll shadow ─────────────────────────────────────────────────────────
-const nav = document.getElementById('nav')
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 8) {
-    nav.style.boxShadow = '0 1px 0 var(--border), 0 4px 20px rgba(31, 42, 68, 0.12)'
-  } else {
-    nav.style.boxShadow = '0 1px 0 var(--border), 0 4px 12px rgba(31, 42, 68, 0.06)'
-  }
-}, { passive: true })
 
 // ── Counter animation ─────────────────────────────────────────────────────────
 function animateCounter(el, target, suffix = '', duration = 1200) {
@@ -84,16 +73,3 @@ const statsObserver = new IntersectionObserver(
 )
 
 document.querySelectorAll('.counter').forEach(el => statsObserver.observe(el))
-
-// ── Balance visibility toggle in phone mockup ─────────────────────────────────
-const eyeBtn = document.getElementById('eye-toggle')
-const balanceEl = document.getElementById('mockup-balance')
-let balanceVisible = true
-
-if (eyeBtn && balanceEl) {
-  eyeBtn.addEventListener('click', () => {
-    balanceVisible = !balanceVisible
-    balanceEl.textContent = balanceVisible ? 'R$ 4.280,50' : 'R$ ••••••'
-    eyeBtn.textContent = balanceVisible ? '👁' : '🙈'
-  })
-}

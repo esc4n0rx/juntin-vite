@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Juntin — Finanças em casal, sem complicação</title>
-  <meta name="description" content="Juntin é o app de finanças compartilhado para casais. Controle receitas, despesas e economias juntos, em tempo real." />
-  <meta name="theme-color" content="#1F2A44" />
+  <meta name="description" content="Juntin é o app de finanças compartilhado para casais. Controle receitas, despesas e economias juntos, em tempo real. Gratuito para Android." />
+  <meta name="theme-color" content="#0052ff" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Juntin — Finanças em casal" />
-  <meta property="og:description" content="Controle suas finanças juntos. Receitas, despesas, relatórios e muito mais — em tempo real." />
+  <meta property="og:description" content="Controle suas finanças juntos. Receitas, despesas, relatórios e metas — em tempo real." />
   <meta property="og:type" content="website" />
 
-  <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script type="module" src="/src/main.js"></script>
 </head>
 <body>
 
@@ -23,7 +23,7 @@
 <nav id="nav">
   <div class="nav-inner">
     <a href="#" class="nav-logo">
-      <span class="nav-logo-text">Junt<span class="logo-in">in</span></span>
+      <span class="nav-logo-text">Junt<span class="logo-accent">in</span></span>
     </a>
 
     <ul class="nav-links">
@@ -33,23 +33,33 @@
     </ul>
 
     <div class="nav-actions">
-      <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
-        <span id="theme-icon">🌙</span>
-      </button>
-      <a href="#download" class="btn btn-primary" style="height:40px;padding:0 18px;font-size:14px;border-radius:12px;">
+      <a href="https://play.google.com/store/apps/details?id=com.juntin.app" target="_blank" rel="noopener" class="btn btn-dark" style="height:40px;padding:0 20px;font-size:14px;">
         Baixar Grátis
       </a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </div>
 </nav>
 
+<!-- Mobile Nav -->
+<div class="nav-mobile" id="mobile-nav">
+  <a href="#features">Funcionalidades</a>
+  <a href="#how">Como funciona</a>
+  <a href="#download">Download</a>
+  <a href="https://play.google.com/store/apps/details?id=com.juntin.app" target="_blank" rel="noopener" class="btn btn-dark">Baixar Grátis</a>
+</div>
+
 <!-- ── HERO ───────────────────────────────────────────────────────────────── -->
 <section id="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg-gradient"></div>
   <div class="container">
     <div class="hero-inner">
 
-      <!-- Left: copy -->
+      <!-- Copy -->
       <div>
         <div class="hero-badge fade-up">
           <span class="hero-badge-dot"></span>
@@ -68,41 +78,70 @@
         </p>
 
         <div class="hero-actions fade-up delay-3">
-          <a href="#download" class="btn btn-primary btn-lg">
-            <!-- Google Play icon -->
-            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+          <a href="https://play.google.com/store/apps/details?id=com.juntin.app" target="_blank" rel="noopener" class="btn btn-dark btn-lg">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
               <path d="M3.18 23.76c.28.15.6.17.9.06l11.65-6.73-2.52-2.52L3.18 23.76zm16.49-10.54c.44-.25.71-.72.71-1.22s-.27-.97-.71-1.22L17.1 9.42 14.37 12l2.73 2.73 2.57-1.51zM3.01.24C2.7.38 2.5.7 2.5 1.05v21.9c0 .35.2.67.51.81l11.5-11.51L3.01.24zm10.71 10.04L3.9.62l10.29 5.94-2.48 3.72z"/>
             </svg>
             Baixar no Google Play
           </a>
-          <a href="#features" class="btn btn-secondary btn-lg">
+          <a href="#features" class="btn btn-surface btn-lg">
             Ver funcionalidades
           </a>
         </div>
 
         <div class="hero-stats fade-up delay-4">
-          <div>
+          <div class="hero-stat">
             <div class="hero-stat-value"><span class="counter" data-target="100" data-suffix="%">0%</span></div>
             <div class="hero-stat-label">Gratuito</div>
           </div>
-          <div style="width:1px;height:36px;background:var(--border)"></div>
-          <div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
             <div class="hero-stat-value">2</div>
-            <div class="hero-stat-label">Pessoas por workspace</div>
+            <div class="hero-stat-label">Usuários por workspace</div>
           </div>
-          <div style="width:1px;height:36px;background:var(--border)"></div>
-          <div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
             <div class="hero-stat-value">∞</div>
             <div class="hero-stat-label">Contas e categorias</div>
           </div>
         </div>
       </div>
 
-      <!-- Right: screenshot real -->
+      <!-- Floating cards -->
       <div class="hero-visual fade-up delay-2">
-        <div class="hero-phone-wrap">
-          <div class="phone-glow"></div>
-          <img src="/home.jfif" alt="Tela inicial do Juntin" class="hero-screenshot" />
+        <div class="hero-visual-glow"></div>
+        <div class="hero-cards">
+
+          <!-- Notification pill -->
+          <div class="hc hc-notif">
+            <div class="hc-notif-dot"></div>
+            João adicionou R$ 58,90
+          </div>
+
+          <!-- Main balance card -->
+          <div class="hc hc-balance">
+            <div class="hc-balance-label">Saldo do casal</div>
+            <div class="hc-balance-amount">R$ 4.280,50</div>
+            <div class="hc-balance-chips">
+              <div class="hc-chip hc-chip-up">↑ R$ 9.800</div>
+              <div class="hc-chip hc-chip-down">↓ R$ 5.519</div>
+            </div>
+          </div>
+
+          <!-- Stat card -->
+          <div class="hc hc-stat">
+            <div class="hc-stat-label">Economia este mês</div>
+            <div class="hc-stat-value">R$ 1.240</div>
+            <div class="hc-stat-badge">↑ 18% vs. mês anterior</div>
+            <div class="hc-bars">
+              <div class="hc-bar" style="height:38%"></div>
+              <div class="hc-bar" style="height:55%"></div>
+              <div class="hc-bar" style="height:42%"></div>
+              <div class="hc-bar" style="height:70%"></div>
+              <div class="hc-bar hc-bar-active" style="height:85%"></div>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -115,44 +154,38 @@
   <div class="container">
     <div class="section-header reveal">
       <span class="section-tag">Funcionalidades</span>
-      <h2 class="section-title">Tudo que vocês precisam, num só lugar</h2>
-      <p class="section-subtitle">Do saldo em tempo real aos relatórios mensais — o Juntin cobre todas as etapas das finanças a dois.</p>
+      <h2 class="section-title section-title-inv">Tudo que vocês precisam,<br>num só lugar</h2>
+      <p class="section-subtitle section-subtitle-inv" style="margin:16px auto 0">Do saldo em tempo real aos relatórios mensais — o Juntin cobre todas as etapas das finanças a dois.</p>
     </div>
 
     <div class="features-grid">
 
       <div class="feature-card reveal">
-        <div class="feature-icon-wrap" style="background:rgba(110,211,160,0.15)">💰</div>
         <div class="feature-title">Saldo em tempo real</div>
         <p class="feature-desc">Visualize o saldo consolidado do casal em uma única tela. Receitas, gastos e economia do mês, sempre atualizados.</p>
       </div>
 
-      <div class="feature-card reveal" style="transition-delay:0.07s">
-        <div class="feature-icon-wrap" style="background:rgba(108,134,255,0.12)">📊</div>
+      <div class="feature-card reveal" style="transition-delay:0.08s">
         <div class="feature-title">Relatórios detalhados</div>
-        <p class="feature-desc">Gráficos de barras, breakdown por categoria e por conta. Compare meses, acompanhe tendências e descubra onde vocês gastam mais.</p>
+        <p class="feature-desc">Gráficos de barras, breakdown por categoria e conta. Compare meses, acompanhe tendências e saiba onde vocês gastam mais.</p>
       </div>
 
-      <div class="feature-card reveal" style="transition-delay:0.14s">
-        <div class="feature-icon-wrap" style="background:rgba(255,201,107,0.15)">🔄</div>
+      <div class="feature-card reveal" style="transition-delay:0.16s">
         <div class="feature-title">Recorrentes automáticos</div>
-        <p class="feature-desc">Cadastre assinaturas, aluguel, parcelas e outros gastos fixos. O app lembra de tudo para vocês automaticamente.</p>
+        <p class="feature-desc">Cadastre assinaturas, aluguel e parcelas. O app lembra de tudo automaticamente para vocês.</p>
       </div>
 
-      <div class="feature-card reveal" style="transition-delay:0.21s">
-        <div class="feature-icon-wrap" style="background:rgba(245,166,193,0.15)">👫</div>
+      <div class="feature-card reveal" style="transition-delay:0.08s">
         <div class="feature-title">Modo casal</div>
         <p class="feature-desc">Crie um workspace compartilhado e convide seu parceiro via link. Tudo sincronizado entre vocês dois em tempo real.</p>
       </div>
 
-      <div class="feature-card reveal" style="transition-delay:0.28s">
-        <div class="feature-icon-wrap" style="background:rgba(110,211,160,0.15)">🏦</div>
+      <div class="feature-card reveal" style="transition-delay:0.16s">
         <div class="feature-title">Múltiplas contas</div>
-        <p class="feature-desc">Adicione quantas contas precisar — Nubank, Itaú, conta conjunta, carteira. Cada transação vai para a conta certa.</p>
+        <p class="feature-desc">Adicione quantas contas precisar — Nubank, Itaú, conta conjunta, carteira. Cada transação vai para o lugar certo.</p>
       </div>
 
-      <div class="feature-card reveal" style="transition-delay:0.35s">
-        <div class="feature-icon-wrap" style="background:rgba(108,134,255,0.12)">🔔</div>
+      <div class="feature-card reveal" style="transition-delay:0.24s">
         <div class="feature-title">Notificações inteligentes</div>
         <p class="feature-desc">Receba alertas quando seu parceiro registrar uma transação. Controle quais notificações receber nas preferências.</p>
       </div>
@@ -171,6 +204,7 @@
     </div>
 
     <div class="steps-grid">
+      <div class="steps-connector"></div>
 
       <div class="step reveal">
         <div class="step-number">1</div>
@@ -181,7 +215,7 @@
       <div class="step reveal" style="transition-delay:0.15s">
         <div class="step-number">2</div>
         <div class="step-title">Convide seu parceiro</div>
-        <p class="step-desc">Envie um link de convite para seu parceiro(a). Ao aceitar, vocês ficam no mesmo workspace compartilhado.</p>
+        <p class="step-desc">Envie um link de convite. Ao aceitar, vocês ficam no mesmo workspace compartilhado automaticamente.</p>
       </div>
 
       <div class="step reveal" style="transition-delay:0.30s">
@@ -194,43 +228,33 @@
   </div>
 </section>
 
-<!-- ── PREVIEW ─────────────────────────────────────────────────────────────── -->
-<section id="preview">
+<!-- ── TRUST ───────────────────────────────────────────────────────────────── -->
+<section id="trust">
   <div class="container">
-    <div class="section-header reveal">
-      <span class="section-tag">Telas do App</span>
-      <h2 class="section-title">Interface limpa e intuitiva</h2>
-      <p class="section-subtitle">Design moderno adaptado para modo claro e escuro, com suporte completo a Android.</p>
-    </div>
+    <div class="trust-grid">
 
-    <div class="screens-scroll reveal">
-
-      <div class="screen-item">
-        <div class="screen-phone">
-          <img src="/home.jfif" alt="Tela Início" class="screen-img" loading="lazy" />
+      <div class="trust-item reveal">
+        <div class="trust-icon">🔒</div>
+        <div>
+          <div class="trust-title">Dados privados e seguros</div>
+          <p class="trust-desc">Criptografia TLS em trânsito. Seus dados nunca são vendidos ou compartilhados com terceiros.</p>
         </div>
-        <div class="screen-label">Início</div>
       </div>
 
-      <div class="screen-item">
-        <div class="screen-phone">
-          <img src="/reports.jfif" alt="Tela Relatórios" class="screen-img" loading="lazy" />
+      <div class="trust-item reveal" style="transition-delay:0.12s">
+        <div class="trust-icon">⚡</div>
+        <div>
+          <div class="trust-title">Sincronização em tempo real</div>
+          <p class="trust-desc">Ao registrar uma transação, seu parceiro vê na hora — sem precisar atualizar.</p>
         </div>
-        <div class="screen-label">Relatórios</div>
       </div>
 
-      <div class="screen-item">
-        <div class="screen-phone">
-          <img src="/goals.jfif" alt="Tela Metas" class="screen-img" loading="lazy" />
+      <div class="trust-item reveal" style="transition-delay:0.24s">
+        <div class="trust-icon">🤝</div>
+        <div>
+          <div class="trust-title">Feito para casais</div>
+          <p class="trust-desc">Cada detalhe foi pensado para facilitar a vida financeira de quem planeja junto.</p>
         </div>
-        <div class="screen-label">Metas</div>
-      </div>
-
-      <div class="screen-item">
-        <div class="screen-phone">
-          <img src="/prevision.jfif" alt="Tela Previsão" class="screen-img" loading="lazy" />
-        </div>
-        <div class="screen-label">Previsão</div>
       </div>
 
     </div>
@@ -239,34 +263,35 @@
 
 <!-- ── DOWNLOAD ────────────────────────────────────────────────────────────── -->
 <section id="download">
+  <div class="download-bg-glow"></div>
   <div class="container">
-    <div class="download-card reveal">
-      <h2 class="download-title">Prontos para começar juntos?</h2>
+    <div class="download-inner reveal">
+
+      <h2 class="download-title">
+        Prontos para começar<br>juntos?
+      </h2>
       <p class="download-subtitle">
         Baixe o Juntin gratuitamente e comecem a controlar as finanças do casal ainda hoje. Disponível para Android.
       </p>
 
-      <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:28px">
-        <a href="#" class="store-badge">
-          <!-- Google Play SVG -->
-          <svg viewBox="0 0 24 24" fill="white" width="28" height="28">
+      <div class="download-actions">
+        <a href="https://play.google.com/store/apps/details?id=com.juntin.app" target="_blank" rel="noopener" class="store-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true">
             <path d="M3.18 23.76c.28.15.6.17.9.06l11.65-6.73-2.52-2.52L3.18 23.76zm16.49-10.54c.44-.25.71-.72.71-1.22s-.27-.97-.71-1.22L17.1 9.42 14.37 12l2.73 2.73 2.57-1.51zM3.01.24C2.7.38 2.5.7 2.5 1.05v21.9c0 .35.2.67.51.81l11.5-11.51L3.01.24zm10.71 10.04L3.9.62l10.29 5.94-2.48 3.72z"/>
           </svg>
-          <div class="store-badge-text">
-            <div class="store-badge-sub">Disponível no</div>
-            <div class="store-badge-main">Google Play</div>
+          <div class="store-btn-texts">
+            <div class="store-btn-sub">Disponível no</div>
+            <div class="store-btn-main">Google Play</div>
           </div>
         </a>
       </div>
 
-      <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap">
-        <div class="notice notice-success">
-          ✅ Gratuito para baixar
-        </div>
-        <div class="notice notice-warning">
-          🔒 Seus dados são privados e seguros
-        </div>
+      <div class="download-badges">
+        <div class="download-badge">✓ Gratuito para baixar</div>
+        <div class="download-badge">✓ Sem cadastro de cartão</div>
+        <div class="download-badge">✓ Dados criptografados</div>
       </div>
+
     </div>
   </div>
 </section>
@@ -275,18 +300,16 @@
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <div class="footer-copy">
-        © 2026 Juntin. Feito com ❤️ para casais que planejam juntos.
-      </div>
+      <a href="#" class="footer-logo-text">Junt<span style="color:#22c55e">in</span></a>
       <ul class="footer-links">
         <li><a href="/privacidade.html">Política de Privacidade</a></li>
         <li><a href="/termos.html">Termos de Uso</a></li>
         <li><a href="/suporte.html">Suporte</a></li>
       </ul>
+      <div class="footer-copy">© 2026 Juntin. Feito para casais que planejam juntos.</div>
     </div>
   </div>
 </footer>
 
-<script type="module" src="/src/main.js"></script>
 </body>
 </html>
