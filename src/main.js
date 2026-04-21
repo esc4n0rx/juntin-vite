@@ -13,21 +13,34 @@ const hamburger = document.getElementById('hamburger')
 const mobileNav = document.getElementById('mobile-nav')
 
 if (hamburger && mobileNav) {
+  const setOpen = (open) => {
+    mobileNav.classList.toggle('open', open)
+    hamburger.setAttribute('aria-expanded', String(open))
+  }
+
   hamburger.addEventListener('click', () => {
-    mobileNav.classList.toggle('open')
+    setOpen(!mobileNav.classList.contains('open'))
   })
 
   // Close on link click
   mobileNav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => mobileNav.classList.remove('open'))
+    a.addEventListener('click', () => setOpen(false))
   })
 
   // Close on outside click
   document.addEventListener('click', (e) => {
     if (!nav.contains(e.target) && !mobileNav.contains(e.target)) {
-      mobileNav.classList.remove('open')
+      setOpen(false)
     }
   })
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setOpen(false)
+  })
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 896) setOpen(false)
+  }, { passive: true })
 }
 
 // ── Scroll reveal ─────────────────────────────────────────────────────────────

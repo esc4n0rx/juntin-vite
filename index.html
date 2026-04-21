@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Juntin — Finanças em casal, sem complicação</title>
   <meta name="description" content="Juntin é o app de finanças compartilhado para casais. Controle receitas, despesas e economias juntos, em tempo real. Gratuito para Android." />
-  <meta name="theme-color" content="#0052ff" />
+  <meta name="theme-color" content="#0E1B2C" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Juntin — Finanças em casal" />
@@ -36,7 +36,7 @@
       <a href="https://play.google.com/store/apps/details?id=com.juntin.app" target="_blank" rel="noopener" class="btn btn-dark" style="height:40px;padding:0 20px;font-size:14px;">
         Baixar Grátis
       </a>
-      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -234,7 +234,12 @@
     <div class="trust-grid">
 
       <div class="trust-item reveal">
-        <div class="trust-icon">🔒</div>
+        <div class="trust-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" width="22" height="22">
+            <rect x="5" y="10" width="14" height="10" rx="2.5" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M8 10V7.5a4 4 0 0 1 8 0V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
         <div>
           <div class="trust-title">Dados privados e seguros</div>
           <p class="trust-desc">Criptografia TLS em trânsito. Seus dados nunca são vendidos ou compartilhados com terceiros.</p>
@@ -242,7 +247,11 @@
       </div>
 
       <div class="trust-item reveal" style="transition-delay:0.12s">
-        <div class="trust-icon">⚡</div>
+        <div class="trust-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" width="22" height="22">
+            <path d="M13.5 2L5 13h5l-1 9 10-13h-5.5L13.5 2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+        </div>
         <div>
           <div class="trust-title">Sincronização em tempo real</div>
           <p class="trust-desc">Ao registrar uma transação, seu parceiro vê na hora — sem precisar atualizar.</p>
@@ -250,7 +259,12 @@
       </div>
 
       <div class="trust-item reveal" style="transition-delay:0.24s">
-        <div class="trust-icon">🤝</div>
+        <div class="trust-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" width="22" height="22">
+            <path d="M8 12 5.5 9.5a2 2 0 1 0-2.8 2.8L6 15.6a3 3 0 0 0 4.2 0l.8-.8a1.8 1.8 0 0 1 2.5 0l.8.8a3 3 0 0 0 4.2 0l3.3-3.3a2 2 0 1 0-2.8-2.8L16 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9.5 9.5 12 12l2.5-2.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
         <div>
           <div class="trust-title">Feito para casais</div>
           <p class="trust-desc">Cada detalhe foi pensado para facilitar a vida financeira de quem planeja junto.</p>
@@ -300,7 +314,7 @@
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <a href="#" class="footer-logo-text">Junt<span style="color:#22c55e">in</span></a>
+      <a href="#" class="footer-logo-text">Junt<span style="color:#17C06B">in</span></a>
       <ul class="footer-links">
         <li><a href="/privacidade.html">Política de Privacidade</a></li>
         <li><a href="/termos.html">Termos de Uso</a></li>
